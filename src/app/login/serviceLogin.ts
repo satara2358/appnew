@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import firebase from "firebase/compat/app";
@@ -5,7 +6,7 @@ import 'firebase/compat/auth'
 
 @Injectable()
 export class LoginService{
-  constructor(private router:Router){
+  constructor(private router:Router, private cookie:CookieService){
 
   }
   token: string
@@ -15,6 +16,7 @@ export class LoginService{
         firebase.auth().currentUser?.getIdToken().then(
           token => {
             this.token=token;
+            this.cookie.set("cookieTemporal", this.token)
             this.router.navigate(['/']);
           }
         )
@@ -22,7 +24,18 @@ export class LoginService{
     )
   };
   getIdToken(){
-    return this.token;
+    return this.cookie.get("cookieTemporal");
+  }
+  logeado(){
+    return this.cookie.get("cookieTemporal");
+  }
+  logout(){
+    firebase.auth().signOut().then(()=>{
+      this.token="";
+      this.cookie.set("cookieTemporal", this.token)
+      this.router.navigate(['/']);
+      window.location.reload()
+    })
   }
 }
 

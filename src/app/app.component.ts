@@ -1,3 +1,4 @@
+import { LoginService } from './login/serviceLogin';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import firebase from 'firebase/compat/app'
 
@@ -7,6 +8,10 @@ import firebase from 'firebase/compat/app'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+
+  constructor(private loginService: LoginService){
+
+  }
   ngOnInit(): void {
     firebase.initializeApp({
       apiKey: "AIzaSyDKZW5FtRyPA6wriiE45mJYXMbOnnYSyqQ",
@@ -14,5 +19,10 @@ export class AppComponent implements OnInit{
     })
   }
 
-
+  loginIn(){
+    return this.loginService.logeado();
+  }
+  logout(){
+    return this.loginService.logout();
+  }
 }

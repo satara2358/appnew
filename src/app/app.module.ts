@@ -23,6 +23,7 @@ import { CiudadesComponent } from './ciudades/ciudades.component';
 import { FilterPipe } from 'src/pipe/filter.pipe';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/serviceLogin';
+import { CookieService } from 'ngx-cookie-service';
 
 const appRouts:Routes=[
   {path:'', component:HomeComponentComponent},
@@ -55,6 +56,7 @@ const appRouts:Routes=[
     CiudadesComponent,
     FilterPipe,
     LoginComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ const appRouts:Routes=[
     ServicioEmpleadoService,
     EmpleService,
     DataServices,
-    LoginService
+    LoginService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 

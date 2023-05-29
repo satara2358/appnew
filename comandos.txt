@@ -1,0 +1,14 @@
+
+ng serve
+npm i -g json-server   /// creacion de una API local en server/db.json
+npm run serverAPI   /// correr el servidor 3000
+
+ng add @angular/material  // angular material installador de estilos 
+
+ng g m pages/products -m=app --route products   // comando para crear un modulo con routing 
+ng g m pages/products/product -m=app --route product // new module 
+
+ng g service pages/products/services/products  // creacion de un servicio 
+ng g s servicio-empleado // create service simple
+ng g c login
+npm install ngx-cookie-service --save
