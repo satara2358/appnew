@@ -1,0 +1,16 @@
+
+
+<div class="container">
+  <p>Edad: {{edad}}</p>
+  <p>empresa: {{empresa}}</p>
+
+<!-- nombre de la empresa: <input type="text" #empresa (keyup)="0"> -->
+nombre de la empresa: <input type="text" [(ngModel)]="empresa">
+<br>
+<p>Nombre : {{nombre}} </p>
+Registrado: {{textRegis}} <br>
+Registrado : <input type="radio" name="nRegistro" value="si" id="registro" [checked]="usuRegistrado" (click)="setUserR($event)" /><br>
+No Registrado: <input type="radio" name="nRegistro" value="no" id="registro" [checked]="usuRegistrado" (click)="setUserR($event)"/>
+
+</div>
+

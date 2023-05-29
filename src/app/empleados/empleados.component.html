@@ -1,0 +1,34 @@
+<!-- <h1  style="text-align: left;">Cualquier cosa</h1> -->
+<!-- <app-empleado>
+  Esto no se renderiza por que esta en componente app-empleado => no app-empleados 
+</app-empleado> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div>
+        {{indexx+1}}: 
+        Nombre: {{empleadoList.nombre}}
+        {{empleadoList.apellido}}
+        Cargo: {{empleadoList.cargo}}
+        Salario: {{empleadoList.salario}}
+      </div>
+      <div>
+        <a [routerLink]="['/update', indexx]" [queryParams]="{action:'1'}">
+          Update <br>
+        </a>
+        <a [routerLink]="['/update', indexx]" [queryParams]="{action:'2'}">
+          Eliminar Dato
+        </a>
+      </div>
+      <app-carat-emple-compo (caractEmple)="agregarC($event)"></app-carat-emple-compo>
+      <ul style="list-style: none;">
+        <li *ngFor="let i of items">{{i}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+

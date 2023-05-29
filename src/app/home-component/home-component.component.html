@@ -1,0 +1,57 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="col-mod-6 my-3">
+        <app-form-new-item
+          (newItemEvent)="addNewCity($event)"
+          [label]="'City'"
+          [className]="'btn-info'">
+        </app-form-new-item>
+      </div>
+      <div class="col-md-6 my-3">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Filter..."
+          [(ngModel)]="criteria">
+      </div>
+      <div class="col-md-8">
+        <ul>
+          <app-ciudades
+            *ngFor="let city of cities | filter:criteria "
+            (cityClickedEvent)="onCityClicked($event)"
+            [city]="city"
+            [selection]="selection">
+          </app-ciudades>
+        </ul>
+        </div>
+        <p>Uso de Pipe </p>
+        <p>{{'6/15/15, 9:03 am' | date:'full'}}</p>
+        <p>{{'999' | currency: 'EUR'}} ==> ISO 4217 conversion y transformacion de monedas</p>
+      <div class="col-md-4">
+        <div *ngIf="selection">
+          <p>La cuidad es: {{selection}}</p>
+          <app-button
+            (click)="onClear()"
+            [color]="'blue'"
+            [label]="'Limpiar Datos'">
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="https://console.firebase.google.com/u/2/project/testing2358-e1e5c/database/testing2358-e1e5c-default-rtdb/data?hl=es-419">Base de Datos Firebase</a>
+  <br>
+  <!-- ---- -->
+  <p>otra seccion de bootstrap</p>
+  <br>
+  <app-empleado></app-empleado><br>
+  <!-- Bootcamp-- -->
+  <p>otra seccion de bootstrap</p>
+  <app-empleados
+    *ngFor="let emple of empleadosH; let i=index"
+    [empleadoList]="emple"
+    [indexx]="i">en App Component principal
+  </app-empleados>
+
+
