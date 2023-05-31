@@ -1,0 +1,35 @@
+<pre>{{contactForm.value | json }}</pre>
+<h1>Contact Form</h1>
+<form #contactForm="ngForm">
+  <div class="mb-4">
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" id="name" ngModel required>
+    <div class="invalid-feeback">Campo requerido</div>
+  </div>
+  <div class="mb-4 form-check">
+    <label for="checkAdult" class="form-label">Tienes 18 años?</label>
+    <input type="checkbox" class="form-check-input" id="checkAdult" name="checkAdult" ngModel required>
+    <div class="invalid-feeback">Campo requerido</div>
+  </div>
+  <div class="mb-4">
+    <label for="departament" class="form-label">Departament</label>
+    <select name="departament" id="departament" class="form-select form-select-sm" ngModel>
+      <option selected>Abrir para seleccionar del menu</option>
+      <option value="marketing">Marketing</option>
+      <option value="ventas">Ventas</option>
+      <option value="otros">otros</option>
+    </select>
+    <div class="invalid-feeback">Campo requerido</div>
+  </div>
+  <div class="mb-4">
+    <label for="comment" class="form-label">Comentarios</label>
+    <textarea  class="form-control" name="comment" id="comment" rows="4" placeholder="Comentarios"ngModel required></textarea>
+    <div class="invalid-feeback">Campo requerido</div>
+  </div>
+  <div class="d-grid gap-2 col-4 float-end">
+    <button type="submit" class="btn btn-info btn-lg">
+      Comentarios
+    </button>
+  </div>
+</form>
+
