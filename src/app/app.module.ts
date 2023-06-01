@@ -6,7 +6,7 @@ import { EmpleadoComponent } from './empleado/empleado.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { ButtonComponent } from './button/button.component';
 import { FormNewItemComponent } from './form-new-item/form-new-item.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CaratEmpleCompoComponent } from './carat-emple-compo/carat-emple-compo.component';
 import { ServicioEmpleadoService } from './service/servicio-empleado.service';
 import { EmpleService } from './service/empleado.service';
@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/serviceLogin';
 import { CookieService } from 'ngx-cookie-service';
 import { ContactComponent } from './contact/contact.component';
+import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 
 const appRouts:Routes=[
   {path:'', component:HomeComponentComponent},
@@ -58,6 +59,7 @@ const appRouts:Routes=[
     FilterPipe,
     LoginComponent,
     ContactComponent,
+    ContactReactiveComponent,
 
   ],
   imports: [
@@ -67,6 +69,7 @@ const appRouts:Routes=[
     RouterModule.forRoot(appRouts),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ServicioEmpleadoService,

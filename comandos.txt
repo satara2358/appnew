@@ -12,4 +12,5 @@ ng g service pages/products/services/products  // creacion de un servicio
 ng g s servicio-empleado // create service simple
 ng g c login
 ng g c contact
+ng g c contact-reactive
 npm install ngx-cookie-service --save
