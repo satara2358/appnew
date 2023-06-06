@@ -26,9 +26,11 @@ import { LoginService } from './login/serviceLogin';
 import { CookieService } from 'ngx-cookie-service';
 import { ContactComponent } from './contact/contact.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
+import { HomerutaComponent } from './homeruta/homeruta.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRouts:Routes=[
-  {path:'', component:HomeComponentComponent},
+  {path:'Home2', component:HomeComponentComponent},
   {path:'Proyectos', component:ProyectComponentComponent},
   {path:'Informacion', component:QuienesComponentComponent},
   {path:'Contacto', component:ContactComponentComponent},
@@ -60,6 +62,8 @@ const appRouts:Routes=[
     LoginComponent,
     ContactComponent,
     ContactReactiveComponent,
+    HomerutaComponent,
+    NavbarComponent,
 
   ],
   imports: [

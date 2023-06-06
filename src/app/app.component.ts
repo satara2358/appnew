@@ -1,28 +1,12 @@
-import { LoginService } from './login/serviceLogin';
+
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import firebase from 'firebase/compat/app'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
-  constructor(private loginService: LoginService){
 
-  }
-  ngOnInit(): void {
-    firebase.initializeApp({
-      apiKey: "AIzaSyDKZW5FtRyPA6wriiE45mJYXMbOnnYSyqQ",
-      authDomain: "https://testing2358-e1e5c-default-rtdb.firebaseio.com"
-    })
-  }
-
-  loginIn(){
-    return this.loginService.logeado();
-  }
-  logout(){
-    return this.loginService.logout();
-  }
 }

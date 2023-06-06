@@ -1,0 +1,27 @@
+<p>homeruta works!</p>
+<section class="container">
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class="nav-link active" href="">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="Home2">HomeUno</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Proyectos">Proyectos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Informacion">Informacion</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Contacto">Contacto</a>
+    </li>
+    <li class="nav-item" style="margin-left: 95%;" *ngIf="!loginIn()">
+      <a class="nav-link" routerLink="/login" >Login</a>
+    </li>
+    <li class="nav-item" style="margin-left: 95%;" *ngIf="loginIn()">
+      <a class="nav-link" routerLink="/" (click)="logout()">LogOut</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</section>
