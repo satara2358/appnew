@@ -14,5 +14,8 @@ export class NavbarComponent {
   gotoReactive(){
     this.router.navigate(['contact-reactive'], {queryParams: {name: 'rutaLinkOculta'}})
   }
+  goToTemplate(){
+    this.router.navigate(['contact-template','580'])
+  }
 
 }
