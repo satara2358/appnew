@@ -16,6 +16,6 @@ export class PermissionsGuard implements CanActivate {
   }
 
   hasRser(): boolean{
-    return false
+    return true
   }
 }

@@ -9,11 +9,14 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class ContactReactiveComponent implements OnInit {
 
+  departmentos: string[] = [];
+
   contactForm!: FormGroup;
 
   constructor(private readonly fb: FormBuilder, private readonly route: ActivatedRoute){}
 
   ngOnInit(): void {
+    this.departmentos = this.route.snapshot.data['department'];
 
     this.contactForm = this.iniForm();
   }

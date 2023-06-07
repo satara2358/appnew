@@ -61,6 +61,7 @@
       formControlName="departament"
       >
       <option selected>Abrir para seleccionar del menu</option>
+      <option *ngFor="let depar of departmentos">{{depar}}</option>
       <option value="marketing">Marketing</option>
       <option value="ventas">Ventas</option>
       <option value="otros">otros</option>
