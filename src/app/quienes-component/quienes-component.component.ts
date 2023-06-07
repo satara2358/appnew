@@ -8,3 +8,8 @@ import { Component } from '@angular/core';
 export class QuienesComponentComponent {
 
 }
+// Obtén el botón y el popover por su ID
+var button = document.getElementById("myButton");
+var popover = document.getElementById("myPopover");
+
+// Agrega un evento de clic al botón para mostrar u ocultar el popover
