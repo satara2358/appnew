@@ -14,3 +14,6 @@ ng g c login
 ng g c contact
 ng g c contact-reactive
 npm install ngx-cookie-service --save
+ng g guard permissions
+ng g guard saved
+ng g m contact-reactive --routing true

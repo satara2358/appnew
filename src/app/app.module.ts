@@ -25,7 +25,6 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './login/serviceLogin';
 import { CookieService } from 'ngx-cookie-service';
 import { ContactComponent } from './contact/contact.component';
-import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { HomerutaComponent } from './homeruta/homeruta.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -61,7 +60,6 @@ const appRouts:Routes=[
     FilterPipe,
     LoginComponent,
     ContactComponent,
-    ContactReactiveComponent,
     HomerutaComponent,
     NavbarComponent,
 
@@ -72,8 +70,7 @@ const appRouts:Routes=[
     FormsModule,
     RouterModule.forRoot(appRouts),
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [
     ServicioEmpleadoService,
@@ -85,4 +82,4 @@ const appRouts:Routes=[
   bootstrap: [AppComponent]
 
 })
-export class AppModule { }
+export class AppModule {}

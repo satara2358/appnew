@@ -9,10 +9,12 @@ import { DataResolverService } from './resolvers/data.resolver.saervice';
 
 const routes: Routes = [
   {path: '',redirectTo: '/homerutas',pathMatch: 'full'},
-  {path: 'contact-reactive', component:ContactReactiveComponent, resolve:{department: DataResolverService}},
   {path: 'contact-template/:id', component:ContactComponent, canActivate: [PermissionsGuard]},
   {path: 'homerutas', component: HomerutaComponent},
   {path: 'home', component: HomeComponentComponent},
+  {path: 'contact-reactive', loadChildren: ()=>
+    import('./contact-reactive/contact-reactive.module')
+    .then(m => m.ContactReactiveModule)}
 ];
 
 @NgModule({
