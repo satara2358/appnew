@@ -3,6 +3,8 @@
     <div class="row">
       <div class="col-mod-6 my-3">
         <app-form-new-item
+          [selection] = "selection"
+          (updateItemEvent)="updateCity($event)"
           (newItemEvent)="addNewCity($event)"
           [label]="'City'"
           [className]="'btn-info'">
@@ -16,21 +18,24 @@
           [(ngModel)]="criteria">
       </div>
       <div class="col-md-8">
-        <ul>
           <app-ciudades
-            *ngFor="let city of cities | filter:criteria "
-            (cityClickedEvent)="onCityClicked($event)"
+            *ngFor="let city of (cities | filter:criteria) "
+            (cityDeletedEvent)="onCityDelete($event)"
+            (citySelectedEvent)="onCitySelected($event)"
             [city]="city"
             [selection]="selection">
           </app-ciudades>
-        </ul>
         </div>
+        <app-card>
+          desde Home Componet 
+        </app-card>
+        <app-card/>
         <p>Uso de Pipe </p>
         <p>{{'6/15/15, 9:03 am' | date:'full'}}</p>
-        <p>{{'999' | currency: 'EUR'}} ==> ISO 4217 conversion y transformacion de monedas</p>
+        <p>{{'999' | currency: 'EUR'}} ISO 4217 conversion y transformacion de monedas</p>
       <div class="col-md-4">
-        <div *ngIf="selection">
-          <p>La cuidad es: {{selection}}</p>
+        <div *ngIf="selection?.name">
+          <p>La cuidad es: {{selection.name}}</p>
           <app-button
             (click)="onClear()"
             [color]="'blue'"

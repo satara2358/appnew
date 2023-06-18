@@ -4,10 +4,27 @@
       <label for="newItem" class="col-form-label">Nuevo {{label}}</label>
     </div>
     <div class="col-auto">
-      <input type="text" id="newItem" class="form-control" #newItem>
+      <input
+       type="text"
+       id="newItem"
+       name="newItem"
+       class="form-control"
+       [(ngModel)]="selection.name"
+       #newItem>
     </div>
     <div class="col-auto">
-      <button (click)="onAddNewItem(newItem.value)" type="button" class="btn" [ngClass]="[className]">Add{{label}}</button>
+      <button
+        (click)="onAddNewItem(selection); newItem.value= ''"
+        type="button"
+        class="btn"
+        [ngClass]="[className]">
+        Agregar</button>
+        <button
+        (click)="onUpdateItem(newItem.name, newItem.value)"
+        type="button"
+        class="btn"
+        [ngClass]="[className]">
+        Actualizar</button>
     </div>
   </div>
 </form>

@@ -27,6 +27,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ContactComponent } from './contact/contact.component';
 import { HomerutaComponent } from './homeruta/homeruta.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CardComponent } from './card/card.component';
 
 const appRouts:Routes=[
   {path:'Home2', component:HomeComponentComponent},
@@ -62,6 +63,7 @@ const appRouts:Routes=[
     ContactComponent,
     HomerutaComponent,
     NavbarComponent,
+    CardComponent,
 
   ],
   imports: [

@@ -1,11 +1,22 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { City } from '../services/data.service';
 
 @Component({
   selector: 'app-ciudades',
-  template: `<ul>
-  <li (click)="onCityClicked(city)"
-    [ngClass]="{'alert alert-info': city === selection}">
-    {{city | titlecase}}
+  template: `
+  <ul class="list-group">
+  <li (click)="onCitySelected(city)"
+    class="list-group-item"
+    [ngClass]="{'active': city._id === selection._id}">
+    {{city.name | titlecase}}
+    <div>
+      <button
+      *ngIf="city._id === selection._id"
+      type="button"
+      class="btn btn-danger float-end"
+      (click)="onCityDelete(city._id)"
+      >Delete</button>
+    </div>
   </li>
 </ul>
 <p>Counter: {{conunterRender()}}</p>` ,
@@ -14,16 +25,19 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 })
 export class CiudadesComponent {
 
-  @Input() city:string
-  @Input() selection:string
+  @Input() city!:City
+  @Input() selection!:City
+  @Output() citySelectedEvent = new EventEmitter<City>();
+  @Output() cityDeletedEvent = new EventEmitter<string>();
 
-  @Output() cityClickedEvent = new EventEmitter<string>();
-
-  onCityClicked(city:string):void{
-    this.cityClickedEvent.emit(city);
-  }
   conunterRender():boolean{
     console.log('Render Form');
     return true;
+  }
+  onCitySelected(city:City):void{
+    this.citySelectedEvent.emit(city);
+  }
+  onCityDelete(id: string): void{
+    this.cityDeletedEvent.emit(id);
   }
 }

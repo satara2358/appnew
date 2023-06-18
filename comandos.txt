@@ -17,3 +17,4 @@ npm install ngx-cookie-service --save
 ng g guard permissions
 ng g guard saved
 ng g m contact-reactive --routing true
+ng g s services/data --skip-test=true
